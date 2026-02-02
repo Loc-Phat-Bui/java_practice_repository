@@ -8,7 +8,7 @@ public class FactorialOfNum {
 	}
 	
 	public int FuncFactorialOfNum (int num) {
-		if(num == 1) return 1;
+		if(num <= 1) return 1;
 		return num*FuncFactorialOfNum(num - 1);
 	}
 	
