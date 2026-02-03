@@ -8,34 +8,19 @@ public class FindMissingNumInArray {
 	
 	public FindMissingNumInArray(int[] arr) {
 		this.arrLength = (short)arr.length;
-		this.numArray = new int[this.arrLength]; 
-		
-		for (short i = 0; i < this.arrLength; i++) {
-			this.numArray[i] = arr[i];
-		}
+		this.numArray = Arrays.copyOf(arr, arrLength); 
 	}
 	
 	public void PrintMissingNumInArray() {
-		int[] sortArr = this.numArray;
-		Arrays.sort(sortArr);
+		int n = this.arrLength + 1;
 		
-		short templArrLength = (short)sortArr[arrLength - 1];
-		int[] tempArr = new int[templArrLength];
+		long expectedSum = (long) (n*(n +1))/2;
+		long actualSum = 0;
 		
-		int j = 0;
-		for (short i = 0; i < templArrLength; i++) {
-			if(sortArr[j] == i + 1) {
-				tempArr[i] = sortArr[j];
-				j++;
-			} else {
-				tempArr[i] = -1;
-			}
-		}
+		for (int num : this.numArray) {
+			actualSum += num;
+	    }
 		
-		for (short i = 0; i < templArrLength; i++) {
-			if(tempArr[i] == -1) {
-				System.out.println(i + 1);
-			}
-		}
+		System.out.println((int) (expectedSum - actualSum));
 	}
 }

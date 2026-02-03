@@ -70,7 +70,7 @@ public class Main {
 		NegativeToPostiveConverter negNum = new NegativeToPostiveConverter(-123);
 		System.out.println(negNum.NegativeToPostiveConverterFunc());
 		
-		int[] array = {4, 3, 8, 7, 5, 2, 6};
+		int[] array = { };
 		FindMissingNumInArray numArr = new FindMissingNumInArray(array);
 		
 		numArr.PrintMissingNumInArray();
